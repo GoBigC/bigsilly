@@ -1,0 +1,25 @@
+{
+  "name": "bigsilly",
+  "displayName": "bigsilly",
+  "description": "BigC language support",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "bigc",
+      "aliases": ["bigc", "bigc"],
+      "extensions": [".uia"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "bigc",
+      "scopeName": "source.bigc",
+      "path": "./syntaxes/bigc.tmLanguage.json"
+    }]
+  }
+}

@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "bigc",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#types"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.bigc",
+				"match": "\\b(if|while|return)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.bigc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.bigc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constants": {
+			"patterns": [{
+				"name": "constant.language.boolean.bigc",
+				"match": "\\b(true|false)\\b"
+			}]
+		},
+		"types": {
+			"patterns": [{
+				"name": "storage.type.bigc",
+				"match": "\\b(int|float|char|void|bool)\\b"
+			}]
+		}
+	},
+	"scopeName": "source.bigc"
+}

@@ -12,7 +12,7 @@
 			"include": "#types"
 		},
 		{
-			"include": "#chars"
+			"include": "#strings-single"
 		},
 		{
 			"include": "#constants"
@@ -43,13 +43,7 @@
 				{
 					"name": "comment.block.bigc",
 					"begin": "/\\*",
-					"end": "\\*/",
-					"patterns": [
-						{
-							"name": "comment.block.bigc",
-							"match": ".*?"
-						}
-					]
+					"end": "\\*/"
 				}
 			]
 		},
@@ -69,8 +63,8 @@
 				}
 			]
 		},
-		"chars": {
-			"name": "string.quoted.double.bigc",
+		"strings-single": {
+			"name": "string.quoted.single.bigc",
 			"begin": "'",
 			"end": "'",
 			"patterns": [
@@ -85,10 +79,6 @@
 				{
 					"name": "constant.language.boolean.bigc",
 					"match": "\\b(true|false)\\b"
-				},
-				{
-					"name": "constant.character.bigc",
-					"match": "'(.|\\\\.)'"
 				}
 			]
 		},

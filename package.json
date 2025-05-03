@@ -1,13 +1,13 @@
 {
   "name": "bigsilly",
-  "displayName": "bigsilly",
+  "displayName": "BigSilly",
   "description": "BigC language support",
   "publisher": "GoBigC",
   "repository": {
     "type": "git",
     "url": "https://github.com/GoBigC/bigsilly"
   },
-  "version": "0.0.2",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -25,7 +25,11 @@
         "extensions": [
           ".uia"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "icons/uia.png",
+          "dark": "icons/uia.png"
+        }
       }
     ],
     "grammars": [

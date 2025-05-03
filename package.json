@@ -3,11 +3,11 @@
   "displayName": "bigsilly",
   "description": "BigC language support",
   "publisher": "GoBigC",
-  "repository":{
+  "repository": {
     "type": "git",
     "url": "https://github.com/GoBigC/bigsilly"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -15,16 +15,25 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "bigc",
-      "aliases": ["bigc", "bigc"],
-      "extensions": [".uia"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "bigc",
-      "scopeName": "source.bigc",
-      "path": "./syntaxes/bigc.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "bigc",
+        "aliases": [
+          "bigc",
+          "bigc"
+        ],
+        "extensions": [
+          ".uia"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "bigc",
+        "scopeName": "source.bigc",
+        "path": "./syntaxes/bigc.tmLanguage.json"
+      }
+    ]
   }
 }

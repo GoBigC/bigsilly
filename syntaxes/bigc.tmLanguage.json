@@ -3,29 +3,76 @@
 	"name": "bigc",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
-			"include": "#strings"
+			"include": "#types"
+		},
+		{
+			"include": "#chars"
 		},
 		{
 			"include": "#constants"
 		},
 		{
-			"include": "#types"
+			"include": "#numbers"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#punctuation"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.bigc",
-				"match": "\\b(if|while|return)\\b"
-			}]
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.bigc",
+					"match": "//.*$"
+				},
+				{
+					"name": "comment.block.bigc",
+					"begin": "/\\*",
+					"end": "\\*/",
+					"patterns": [
+						{
+							"name": "comment.block.bigc",
+							"match": ".*?"
+						}
+					]
+				}
+			]
 		},
-		"strings": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.bigc",
+					"match": "\\b(if|while|return|else)\\b"
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "storage.type.bigc",
+					"match": "\\b(int|float|char|void|bool)\\b"
+				}
+			]
+		},
+		"chars": {
 			"name": "string.quoted.double.bigc",
-			"begin": "\"",
-			"end": "\"",
+			"begin": "'",
+			"end": "'",
 			"patterns": [
 				{
 					"name": "constant.character.escape.bigc",
@@ -34,16 +81,76 @@
 			]
 		},
 		"constants": {
-			"patterns": [{
-				"name": "constant.language.boolean.bigc",
-				"match": "\\b(true|false)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "constant.language.boolean.bigc",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "constant.character.bigc",
+					"match": "'(.|\\\\.)'"
+				}
+			]
 		},
-		"types": {
-			"patterns": [{
-				"name": "storage.type.bigc",
-				"match": "\\b(int|float|char|void|bool)\\b"
-			}]
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.integer.bigc",
+					"match": "\\b[0-9]+\\b"
+				},
+				{
+					"name": "constant.numeric.float.bigc",
+					"match": "\\b[0-9]+\\.[0-9]+\\b"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.bigc",
+					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*(?=\\s*\\()"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.name.bigc",
+					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.arithmetic.bigc",
+					"match": "[+\\-*/]"
+				},
+				{
+					"name": "keyword.operator.comparison.bigc",
+					"match": "(==|!=|<=|>=|<|>)"
+				},
+				{
+					"name": "keyword.operator.logical.bigc",
+					"match": "(\\|\\||&&|!)"
+				},
+				{
+					"name": "keyword.operator.assignment.bigc",
+					"match": "="
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.brackets.bigc",
+					"match": "[\\[\\]{}()]"
+				},
+				{
+					"name": "punctuation.separator.bigc",
+					"match": "[,;]"
+				}
+			]
 		}
 	},
 	"scopeName": "source.bigc"
